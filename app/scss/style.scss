@@ -1,6 +1,5 @@
 @import '../../node_modules/normalize.css/normalize';
 @import '../../node_modules/swiper/swiper-bundle';
-@import '../scss/keyframes';
 
 :root {
     --orange: #F77833;
@@ -170,7 +169,9 @@ body {
     &__content {
         position: relative;
         padding: 32px 24px;
-        background: var(--white) url(../images/hero-content-image.avif) right center / contain no-repeat;
+        background: var(--white) image-set(url(../images/hero-content-image.avif),
+                url(../images/hero-content-image.webp),
+                url(../images/hero-content-image.png)) right center / contain no-repeat;
         border-radius: 8px;
 
         &::before {
@@ -272,6 +273,53 @@ body {
     cursor: pointer;
 }
 
+.reviews {
+    margin-top: 50px;
+
+    h2 {
+        margin-bottom: 25px;
+
+        &::after {
+            content: '182';
+            position: relative;
+            left: 5px;
+            bottom: 10px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+
+    .btn {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 15px 130px;
+    }
+
+    &__item {
+        width: 100%;
+        display: grid;
+        gap: 15px;
+        padding: 30px 25px;
+        background: var(--white);
+        border-radius: 8px;
+    }
+}
+
+h2 {
+    color: var(--h2-color);
+    font-size: clamp(24px, 6vw, 28px);
+    font-weight: 800;
+    line-height: 120%;
+}
+
+.swiper {
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+}
+
+@import '../scss/keyframes';
 @import '../scss/_min1000';
 @import '../scss/_1200';
 @import '../scss/_992';
