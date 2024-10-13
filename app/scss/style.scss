@@ -46,11 +46,16 @@
 }
 
 body {
+    padding-bottom: 50px;
     background: #F5F5F5;
 }
 
 .header {
     background: var(--white);
+
+    &__burger {
+        display: none;
+    }
 
     .container {
         display: flex;
@@ -158,6 +163,11 @@ body {
 
 .hero {
     margin-top: 8px;
+
+    &-main {
+        width: 100%;
+        overflow: hidden;
+    }
 
     .container {
         display: grid;
@@ -316,11 +326,32 @@ h2 {
 .swiper {
     box-sizing: border-box;
     width: 100%;
+    margin-bottom: 25px;
     overflow: hidden;
+
+    &-pagination {
+        display: none;
+    }
+
+    &-scrollbar {
+        position: initial !important;
+        height: 15px !important;
+        margin-top: 15px;
+        background: var(--scroll-bg);
+
+        &-drag {
+            background: var(--scroll-active);
+        }
+    }
+
+    &-slide {
+        height: initial;
+    }
 }
 
 @import '../scss/keyframes';
 @import '../scss/_min1000';
+@import '../scss/_1300';
 @import '../scss/_1200';
 @import '../scss/_992';
 @import '../scss/_768';
