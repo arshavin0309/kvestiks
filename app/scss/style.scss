@@ -46,15 +46,27 @@
 }
 
 body {
-    padding-bottom: 50px;
+    padding-top: 56px;
+    padding-bottom: 90px;
     background: #F5F5F5;
 }
 
 .header {
+    height: 56px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
     background: var(--white);
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.08);
 
     &__burger {
         display: none;
+        width: 24px;
+        height: 24px;
+        background: url(../images/header-burger.svg) center / contain no-repeat;
+        border: none;
     }
 
     .container {
@@ -120,6 +132,13 @@ body {
         justify-items: center;
         text-align: center;
 
+        &--mobile {
+            display: none;
+            width: 24px;
+            height: 24px;
+            background: url(../images/header-orders.svg) center / contain no-repeat;
+        }
+
         &::before {
             width: 24px;
             height: 24px;
@@ -184,7 +203,7 @@ body {
                 url(../images/hero-content-image.png)) right center / contain no-repeat;
         border-radius: 8px;
 
-        &::before {
+        &::after {
             position: absolute;
             top: 10px;
             right: 14px;
@@ -197,6 +216,7 @@ body {
         }
 
         h1 {
+            font-size: clamp(28px, 6vw, 36px);
             margin-bottom: 25px;
             font-weight: 800;
             color: var(--h2-color);
@@ -286,6 +306,18 @@ body {
 .reviews {
     margin-top: 50px;
 
+    &__stars {
+        width: 120px;
+        height: 12px;
+        margin-top: -9px;
+        background: url(../images/stars.svg) center / contain no-repeat;
+    }
+
+    &__date {
+        font-size: 13px;
+        color: #868686;
+    }
+
     h2 {
         margin-bottom: 25px;
 
@@ -297,6 +329,10 @@ body {
             font-size: 16px;
             font-weight: 600;
         }
+    }
+
+    h3 {
+        margin-bottom: -3px;
     }
 
     .btn {
@@ -331,6 +367,19 @@ h2 {
 
     &-pagination {
         display: none;
+
+        &-bullet {
+            background: #D9D9D9;
+            opacity: 1;
+            transition: .2s ease-in-out all;
+
+            &-active {
+                width: 16px;
+                height: 8px;
+                border-radius: 10px;
+                background: #D9D9D9;
+            }
+        }
     }
 
     &-scrollbar {
@@ -355,4 +404,5 @@ h2 {
 @import '../scss/_1200';
 @import '../scss/_992';
 @import '../scss/_768';
+@import '../scss/_700';
 @import '../scss/_500';
