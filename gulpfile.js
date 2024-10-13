@@ -117,7 +117,7 @@ function building() {
         '!app/images/**/*.html',
         'app/images/*.*',
         // '!app/images/*.svg',
-        'app/images/sprite.svg',
+        // 'app/images/sprite.svg',
         'app/js/main.min.js',
         'app/**/*.html',
         'app/upload/**/*'
